@@ -23,7 +23,7 @@ class Vegetables(private vararg val toppings: String) : Item("Vegetables", 20) {
 
 }
 
-class Order(val orderNumber: Int) {
+class Order(private val orderNumber: Int) {
     private val itemList = mutableListOf<Item>()
 
     fun addItem(newItem: Item) {

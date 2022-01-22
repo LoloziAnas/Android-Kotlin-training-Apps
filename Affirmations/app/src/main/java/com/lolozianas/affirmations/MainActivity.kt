@@ -2,6 +2,7 @@ package com.lolozianas.affirmations
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lolozianas.affirmations.adapter.ItemAdapter
 import com.lolozianas.affirmations.model.Datasource
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         val dataset = Datasource().loadAffirmations()
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+
         recyclerView.adapter = ItemAdapter(this, dataset)
 
         // Use this setting to improve performance if you know that changes

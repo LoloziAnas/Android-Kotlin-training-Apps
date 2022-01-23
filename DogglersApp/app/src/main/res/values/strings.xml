@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Dogglers App</string>
+    <string name="horizontal">Horizontal</string>
+    <string name="vertical">Vertical</string>
+    <string name="grid">Grid</string>
+    <string name="faye">Faye</string>
+    <string name="age_7">Age: 7</string>
+    <string name="doge_age">Age: %1$s</string>
+    <string name="doge_hobbies">Hobbies: %1$s</string>
+    <string name="hobbies_sleeping">Hobbies: Sleeping</string>
+</resources>

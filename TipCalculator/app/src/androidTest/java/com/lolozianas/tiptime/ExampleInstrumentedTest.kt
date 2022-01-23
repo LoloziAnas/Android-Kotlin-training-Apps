@@ -46,8 +46,7 @@ class ExampleInstrumentedTest {
     fun calculate_20_percent_tip(){
         onView(withId(R.id.text_input_cost_of_service))
             .perform(typeText("50.00"))
-        onView(withId(R.id.rb_amazing))
-
+        onView(withId(R.id.rb_amazing)
         onView(withId(R.id.btn_calculate))
             .perform(click())
         onView(withId(R.id.tv_tip_amount))

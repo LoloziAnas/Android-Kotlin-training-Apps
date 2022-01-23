@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:padding="6dp"
             android:text="@string/affirmation1"
-            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
 
     </LinearLayout>

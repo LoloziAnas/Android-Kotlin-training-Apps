@@ -62,6 +62,7 @@
             android:paddingEnd="16dp"
             android:text="@string/desserts_sold"
             android:textSize="30sp"
+            android:textColor="@color/secondaryLightColor"
             app:layout_constraintBottom_toTopOf="@id/tv_revenue"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -70,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
+            android:textColor="@color/secondaryLightColor"
             android:paddingEnd="16dp"
             android:text="@{amountSold.toString()}"
             android:textSize="30sp"
@@ -83,7 +85,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text='@{"$" + revenue.toString()}'
-            android:textColor="@color/green"
+            android:textColor="@color/secondaryLightColor"
             android:textSize="60sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

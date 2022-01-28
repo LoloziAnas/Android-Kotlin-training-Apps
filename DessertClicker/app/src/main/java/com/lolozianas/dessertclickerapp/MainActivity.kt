@@ -12,17 +12,15 @@ import androidx.databinding.DataBindingUtil
 import com.lolozianas.dessertclickerapp.data.DataSource
 import com.lolozianas.dessertclickerapp.databinding.ActivityMainBinding
 
+// tag for logging
+const val TAG = "MainActivity"
+
+// onSaveInstanceState Bundle Keys
+const val KEY_REVENUE = "revenue_key"
+const val KEY_DESSERT_SOLD = "dessert_sold_key"
 
 class MainActivity : AppCompatActivity() {
 
-    companion object {
-        // tag for logging
-        const val TAG = "MainActivity"
-
-        // onSaveInstanceState Bundle Keys
-        const val KEY_REVENUE = "revenue_key"
-        const val KEY_DESSERT_SOLD = "dessert_sold_key"
-    }
 
     // Contains all the views
     private lateinit var binding: ActivityMainBinding
@@ -43,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null) {
             revenue = savedInstanceState.getInt(KEY_REVENUE)
             dessertsSold = savedInstanceState.getInt(KEY_DESSERT_SOLD)
+            // Show the correct dessert
+            showCurrentDessert()
         }
 
         // Make sure the correct dessert is showing

@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
-import com.lolozianas.wordsapp.DetailsActivity
 import com.lolozianas.wordsapp.R
+import com.lolozianas.wordsapp.WordListFragment
 
 class WordAdapter(private val letter: String, context: Context) :
     RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
@@ -54,7 +54,7 @@ class WordAdapter(private val letter: String, context: Context) :
         holder.button.text = word
         //
         holder.button.setOnClickListener {
-            val queryUrl = Uri.parse("${DetailsActivity.SEARCH_PREFIX}$word")
+            val queryUrl = Uri.parse("${WordListFragment.SEARCH_PREFIX}$word")
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             context.startActivity(intent)
         }

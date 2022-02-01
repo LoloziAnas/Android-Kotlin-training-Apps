@@ -48,8 +48,6 @@ class WordListFragment : Fragment() {
         binding.recyclerView.addItemDecoration(
             DividerItemDecoration(this.requireContext(), DividerItemDecoration.VERTICAL)
         )
-        // Customize the title of the activity
-        //title = getString(R.string.detail_prefix) + " " + letter
     }
 
     override fun onDestroyView() {

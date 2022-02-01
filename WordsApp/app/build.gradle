@@ -52,7 +52,11 @@ dependencies {
     // navigation library
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.4.0"
+    // libraries for testing fragments and navigation component
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.4.0'
 
+    debugImplementation 'androidx.fragment:fragment-testing:1.4.1'
 
 
 }

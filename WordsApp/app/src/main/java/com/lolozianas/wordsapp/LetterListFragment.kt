@@ -1,6 +1,8 @@
 package com.lolozianas.wordsapp
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -14,6 +16,8 @@ import com.lolozianas.wordsapp.databinding.FragmentLetterListBinding
  * A simple [Fragment] subclass.
  * create an instance of this fragment.
  */
+
+const val TAG = "LetterListFragment"
 class LetterListFragment : Fragment() {
 
     private var _binding: FragmentLetterListBinding? = null
@@ -23,14 +27,22 @@ class LetterListFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate: Called")
         // Display the option menu on the fragment
         setHasOptionsMenu(true)
+        
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume: Called")
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG, "onCreateView: Called")
         // Inflate the layout for this fragment
         _binding = FragmentLetterListBinding.inflate(inflater, container, false)
         return binding.root
@@ -38,15 +50,46 @@ class LetterListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d(TAG, "onViewCreated: Called")
         letterRecyclerView = binding.recyclerView
         chooseLayout()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        Log.d(TAG, "onDestroyView: Called")
         _binding = null
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy: Called")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d(TAG, "onDetach: Called")
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d(TAG, "onAttach: Called")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart: Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause: Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop: Called")
+    }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         // Inflate the R.menu.menu_layout on option menu
         inflater.inflate(R.menu.menu_layout, menu)

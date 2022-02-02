@@ -55,7 +55,6 @@ dependencies {
     // libraries for testing fragments and navigation component
     androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
     androidTestImplementation 'androidx.navigation:navigation-testing:2.4.0'
-
     debugImplementation 'androidx.fragment:fragment-testing:1.4.1'
 
 

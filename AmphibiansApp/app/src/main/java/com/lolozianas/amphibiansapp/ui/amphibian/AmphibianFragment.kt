@@ -5,29 +5,44 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.lolozianas.amphibiansapp.R
+import androidx.fragment.app.activityViewModels
+import com.lolozianas.amphibiansapp.databinding.FragmentAmphibianListBinding
 
 /**
- * A fragment representing a list of Items.
+ * [AmphibianFragment] A fragment representing a list of Items.
  */
 class AmphibianFragment : Fragment() {
 
+    private var _binding: FragmentAmphibianListBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
+    private val amphibianViewModel: AmphibianViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_amphibian_list, container, false)
-
-        // Set the adapter
-
-        return view
+        // Inflates the layout with Data Binding
+        _binding = FragmentAmphibianListBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.apply {
 
+            // Allows Data Binding to observe LiveData with the lifecycle of this fragment
+            lifecycleOwner = this@AmphibianFragment
+
+            // Giving binding access to AmphibianViewModel
+            viewModel = amphibianViewModel
+
+            // Sets the Adapter of the amphibian RecyclerView
+            recyclerViewAmphibian.adapter = AmphibianListAdapter()
+
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

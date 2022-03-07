@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Amphibians app</string>
+    <string name="label_amphibian_details">Amphibian Detail</string>
 </resources>

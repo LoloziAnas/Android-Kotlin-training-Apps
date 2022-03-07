@@ -5,6 +5,13 @@
 
     <data>
 
+        <variable
+            name="amphibian"
+            type="com.lolozianas.amphibiansapp.network.Amphibian" />
+
+        <variable
+            name="clickListener"
+            type="com.lolozianas.amphibiansapp.ui.amphibian.AmphibianListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -20,7 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
+            android:onClick="@{()->clickListener.onClick(amphibian)}"
             android:padding="8dp"
+            android:text="@{amphibian.name}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"

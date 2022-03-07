@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.lolozianas.amphibiansapp.R
 import com.lolozianas.amphibiansapp.databinding.FragmentAmphibianListBinding
 
 /**
@@ -36,7 +38,10 @@ class AmphibianFragment : Fragment() {
             viewModel = amphibianViewModel
 
             // Sets the Adapter of the amphibian RecyclerView
-            recyclerViewAmphibian.adapter = AmphibianListAdapter()
+            recyclerViewAmphibian.adapter = AmphibianListAdapter(AmphibianListener { amphibian ->
+                amphibianViewModel.onAmphibianClicked(amphibian)
+                findNavController().navigate(R.id.action_amphibianFragment_to_amphibianDetailFragment)
+            })
 
         }
     }

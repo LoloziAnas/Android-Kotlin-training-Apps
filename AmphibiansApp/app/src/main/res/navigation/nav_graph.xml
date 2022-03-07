@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/amphibianFragment"
         android:name="com.lolozianas.amphibiansapp.ui.amphibian.AmphibianFragment"
-        android:label="Amphibians" />
+        android:label="Amphibians" >
+        <action
+            android:id="@+id/action_amphibianFragment_to_amphibianDetailFragment"
+            app:destination="@id/amphibianDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/amphibianDetailFragment"
+        android:name="com.lolozianas.amphibiansapp.ui.amphibian.AmphibianDetailFragment"
+        android:label="@string/label_amphibian_details" />
 </navigation>

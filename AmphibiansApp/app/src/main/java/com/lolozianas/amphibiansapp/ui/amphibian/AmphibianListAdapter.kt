@@ -8,13 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lolozianas.amphibiansapp.databinding.ListViewAmphibianBinding
 import com.lolozianas.amphibiansapp.network.Amphibian
 
-class AmphibianListAdapter :
+class AmphibianListAdapter(private val clickListener: AmphibianListener) :
     ListAdapter<Amphibian, AmphibianListAdapter.AmphibianViewHolder>(DiffCallback) {
 
     inner class AmphibianViewHolder(private var binding: ListViewAmphibianBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(amphibian: Amphibian) {
-            binding.amphibianName.text = amphibian.name
+        fun bind(amphibian: Amphibian, clickListener: AmphibianListener) {
+            binding.amphibian = amphibian
+            binding.clickListener = clickListener
+            binding.executePendingBindings()
         }
     }
 
@@ -45,10 +47,11 @@ class AmphibianListAdapter :
      * */
     override fun onBindViewHolder(holder: AmphibianViewHolder, position: Int) {
         val amphibian = getItem(position)
-        holder.bind(amphibian)
+        holder.bind(amphibian, clickListener)
     }
 
-    class AmphibianListener(val clickListener: (amphibian: Amphibian) -> Unit) {
-        fun onClick(amphibian: Amphibian) = clickListener(amphibian)
-    }
+}
+
+class AmphibianListener(val clickListener: (amphibian: Amphibian) -> Unit) {
+    fun onClick(amphibian: Amphibian) = clickListener(amphibian)
 }

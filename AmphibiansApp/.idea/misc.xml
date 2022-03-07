@@ -9,6 +9,7 @@
         <entry key="..\:/kotlin-android-training/AmphibiansApp/app/src/main/res/drawable/loading_img.xml" value="0.2203125" />
         <entry key="..\:/kotlin-android-training/AmphibiansApp/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/kotlin-android-training/AmphibiansApp/app/src/main/res/layout/fragment_amphibian.xml" value="0.20416666666666666" />
+        <entry key="..\:/kotlin-android-training/AmphibiansApp/app/src/main/res/layout/fragment_amphibian_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/kotlin-android-training/AmphibiansApp/app/src/main/res/layout/fragment_amphibian_list.xml" value="0.42407407407407405" />
         <entry key="..\:/kotlin-android-training/AmphibiansApp/app/src/main/res/layout/list_view_amphibian.xml" value="0.33" />
       </map>
